@@ -4,15 +4,15 @@ Created as a learning exercise in WebAssembly. This is a simple utility for prod
 
 
 Setting up the tool with the following configuration:
-!(docs/demo.png)
+![Example tool config](./docs/demo.png)
 
 (Based on data for the teensy 4.1 microcontroller [PWM Settings](https://www.pjrc.com/teensy/td_pulse.html) )
 
 Will produce an output that when used in this simple circuit in LTSpice
-!(docs/basic-circuit.png)
+![LTSpice Basic signal source with RC low pass filter](docs/basic-circuit.png)
 
 will create th waveform displayed here (green as the ouput for V1 - blue the filtered and buffered output of U1)
-!(docs/waveform.png)
+![Waveform produced from LtSpice, showing PWM signal and filtere sin wave](docs/waveform.png)
 
 ## Code
 Initially this took the form of a small amount of very simple C++ code to create a command line application that could be quickly used to produce these files by reading in LUTs for the waveforms in different resolutions and pipeing the output to a file used by LTSpice. I was interested in learning about WebAssembly and what is necesary in order to build a program for it and how to set things up in the environment. I've written some detailed notes on this process [on my website](https://alastair.io/).
