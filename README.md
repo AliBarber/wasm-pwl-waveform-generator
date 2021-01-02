@@ -11,7 +11,7 @@ Setting up the tool with the following configuration:
 Will produce an output that when used in this simple circuit in LTSpice
 ![LTSpice Basic signal source with RC low pass filter](docs/basic-circuit.png)
 
-will create th waveform displayed here (green as the ouput for V1 - blue the filtered and buffered output of U1)
+will create the waveform displayed here (green as the ouput for V1 - blue the filtered and buffered output of U1)
 ![Waveform produced from LtSpice, showing PWM signal and filtere sin wave](docs/waveform.png)
 
 ## Code
