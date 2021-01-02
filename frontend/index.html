@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>form</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col">
+                        <form>
+                            <div class="form-group text-center">
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text">Resolution</span>
+                                        <div class="btn-group btn-group-toggle" role="group" id="resolution-button-group" data-toggle="buttons"><button class="btn btn-secondary btn-sm" type="button" value="4">4<input type="radio" id="resolution-4" name="resolution" autocomplete="off"></button><button class="btn btn-secondary btn-sm" type="button" value="5">5<input type="radio" id="resolution-5" name="resolution" autocomplete="off"></button>
+                                            <button
+                                                class="btn btn-secondary btn-sm" type="button" value="6">6<input type="radio" id="resolution-6" name="resolution" autocomplete="off"></button><button class="btn btn-secondary btn-sm" type="button" value="7">7<input type="radio" id="resolution-7" name="resolution" autocomplete="off"></button>
+                                                <button
+                                                    class="btn btn-secondary active" id="resolution-8-button" type="button" value="8">8<input type="radio" id="resolution-8" name="resolution" autocomplete="off" checked="true"></button><button class="btn btn-secondary btn-sm" type="button" value="9">9<input type="radio" id="resolution-9" name="resolution" autocomplete="off"></button>
+                                                    <button
+                                                        class="btn btn-secondary btn-sm" type="button" value="10">10<input type="radio" id="resolution-10" name="resolution" autocomplete="off"></button><button class="btn btn-secondary btn-sm" type="button" value="11">11<input type="radio" id="resolution-11" name="resolution" autocomplete="off"></button>
+                                                        <button
+                                                            class="btn btn-secondary btn-sm" type="button" value="12">12<input type="radio" id="resolution-12" name="resolution" autocomplete="off"></button>
+                                        </div>
+                                    </div>
+                                    <div class="input-group-append"><span class="input-group-text">Bits</span></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <form>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text">PWM Frequency</span></div><input class="form-control" type="text" id="frequency-text-input" name="frequency" value="585937.5">
+                                    <div class="input-group-append"><span class="input-group-text">Hz</span></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <form>
+                            <div class="form-group">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend"><span class="input-group-text">Rise Time</span></div><input class="form-control" type="text" id="rise-time-text" value="1">
+                                            <div class="input-group-append">
+                                                <div class="dropdown btn-group" role="group" id="rise-dropdown"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="rise-dropdown-btn" type="button">pS&nbsp;</button>
+                                                    <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">ps</a><a class="dropdown-item" role="presentation" href="#">nS</a><a class="dropdown-item" role="presentation" href="#">uS</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend"><span class="input-group-text">Fall Time</span></div><input class="form-control" type="text" id="fall-time-text" value="1">
+                                            <div class="input-group-append">
+                                                <div class="dropdown btn-group" role="group" id="fall-dropdown"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="fall-dropdown-btn" type="button">pS&nbsp;</button>
+                                                    <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">pS</a><a class="dropdown-item" role="presentation" href="#">nS</a><a class="dropdown-item" role="presentation" href="#">uS</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <form>
+                            <div class="form-group">
+                                <div class="form-row">
+                                    <div class="col-lg-4">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend"><span class="input-group-text">Waveform</span>
+                                                <div class="btn-group" role="group"><button class="btn btn-secondary" type="button" disabled="">Sin</button></div>
+                                            </div>
+                                            <div class="input-group-append"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend"><span class="input-group-text">Update Every</span></div><input class="form-control" type="text" id="update-text" value="2">
+                                            <div class="input-group-append"><span class="input-group-text">Pulses</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <form>
+                            <div class="form-group">
+                                <div class="form-row">
+                                    <div class="col-lg-6">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend"><span class="input-group-text">Low</span></div><input class="form-control" type="text" id="low-text-input" value="0.0">
+                                            <div class="input-group-append"><span class="input-group-text">V</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend"><span class="input-group-text">High</span></div><input class="form-control" type="text" id="high-text-input" value="3.3">
+                                            <div class="input-group-append"><span class="input-group-text">V</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col"><button class="btn btn-primary" id="run-calc" type="button">Create</button></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row h-100">
+                    <div class="col"><textarea id="output" class="h-100 w-100" placeholder="Output shown here"></textarea></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../calc.js"></script>
+</body>
+
+</html>
