@@ -156,8 +156,21 @@ function validate_input() {
   return form_data;
 }
 
+function invalidate_download() {
+	// Simply disable the download button - must click on the Create button first
+	 $("#download-btn").attr("disabled", true);
+}
+
 function initailise_ui(run_calc_function) {
   var dropdown_ids = ["rise-dropdown", "fall-dropdown"];
+
+  $("button").click(function(button_event){
+  	if(button_event.target.id != "download-btn"){
+  		invalidate_download();
+  	}
+  });
+
+  $("input[type=text]").change(invalidate_download);
 
   dropdown_ids.forEach((dropdown_id, idx) => {
     console.log(dropdown_id);
@@ -165,6 +178,7 @@ function initailise_ui(run_calc_function) {
       // console.log($(this).text());
       $("#" + dropdown_id + "-btn:first-child").text($(this).text());
       $("#" + dropdown_id + "-btn:first-child").val($(this).text());
+      invalidate_download();
     });
   });
 
@@ -188,12 +202,33 @@ function initailise_ui(run_calc_function) {
         form_data.low_voltage,
         form_data.high_voltage
       );
+      $("#download-btn").removeAttr("disabled");
     }
+  });
+
+  $("#download-btn").on("click", (button_action) => { 
+  	if($("#output").val() == ""){
+  		$("#download-btn").attr("disabled", true);
+  		return;
+  	}
+  	
+  	// Download trick - make an ivisible link containing the data
+  	var download_a = document.createElement("a");
+  	
+  	var blob = new Blob([$("#output").val()],{type:"text/plain"});
+	var download_url = URL.createObjectURL(blob);
+
+	download_a.href = download_url;
+  	download_a.download = $("#resolution-button-group").find("button.active").prop("value") + "bit-pwm.txt";
+  	document.body.appendChild(download_a);
+  	download_a.click();
+
+
   });
 }
 
 WebAssembly.instantiateStreaming(
-  fetch("./calc.wasm"),
+  fetch("http://0.0.0.0:8000/calc.wasm"),
   wasm_imports
 )
   .then((wa_object) => {
